@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.hohha.encryptor"
+        version="0.1.0">
+
+  <name>Hohha Encryption Plugin</name>
+  <author>Ismail Kizir</author>
+  <keywords>Hohha,Hohha Dynamic XOR,RSA</keywords>
+  <license>MIT & GPL</license>
+  
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/HohhaEncryptorMain.js" target="js/HohhaEncryptorMain.js"/>
+
+  <js-module src="www/HohhaEncryptorMain.js" name="HohhaEncryptorMain">
+    <clobbers target="HohhaEncryptor" />
+  </js-module>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/*">
+      <feature name="HohhaEncryptor">
+        <param name="ios-package" value="HohhaEncryptor" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/config.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/aes.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/des.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/aesni.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/arc4.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/asn1.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/asn1write.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/base64.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/bignum.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/bn_mul.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/certs.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/check_config.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/cipher.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/cipher_internal.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/ctr_drbg.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/debug.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/dhm.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/ecp.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/entropy.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/entropy_poll.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/error.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/gcm.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/havege.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/hmac_drbg.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/md.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/md2.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/md4.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/md5.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/md_internal.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/memory_buffer_alloc.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/net.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/oid.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/pem.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/pk.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/pk_internal.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/pkcs11.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/pkcs12.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/pkcs5.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/x509_crt.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/x509_crl.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/x509.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/platform.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/ripemd160.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/rsa.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/sha1.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/sha256.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/sha512.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/threading.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/timing.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    <header-file src="src/ios/mbedtls-2.2.1/include/mbedtls/version.h" target-dir="HohhaEncryptorPlugin/mbedtls/mbedtls/"/>
+    
+    <source-file src="src/ios/mbedtls-2.2.1/library/aes.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/des.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/aesni.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/arc4.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/asn1parse.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/asn1write.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/base64.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/bignum.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/ccm.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/certs.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/cipher.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/cipher_wrap.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/ctr_drbg.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/debug.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/dhm.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/entropy.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/entropy_poll.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/error.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/gcm.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/havege.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/hmac_drbg.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/md.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/md2.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/md4.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/md5.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/md_wrap.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/memory_buffer_alloc.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/net.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/oid.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pem.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pk.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pk_wrap.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pkcs11.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pkcs12.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pkcs5.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pkparse.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/x509.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/x509_crt.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/x509_crl.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/pkwrite.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/platform.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/ripemd160.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/rsa.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/sha1.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/sha256.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/sha512.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/threading.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/timing.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/version.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+    <source-file src="src/ios/mbedtls-2.2.1/library/version_features.c" target-dir="HohhaEncryptorPlugin/mbedtls/"/>
+
+    <header-file src="src/ios/HohhaEncryptor.h" target-dir="HohhaEncryptorPlugin"/>
+    <source-file src="src/ios/HohhaEncryptor.m" target-dir="HohhaEncryptorPlugin"/>
+  </platform>
+
+</plugin>
